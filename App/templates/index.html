@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>Talash Search Engine</title>
+</head>
+
+<body>
+    <body class="">
+        <form id="formSearch" class="" action="">
+            <input id="searchQuery" class="" type="text">
+            <button type="submit">
+                <svg xmlns="http://www.w3.org/2000/svg" class="" viewBox="0 0 24 24" fill="none">
+                    <path
+                        d="M16.6725 16.6412L21 21M19 11C19 15.4183 15.4183 19 11 19C6.58172 19 3 15.4183 3 11C3 6.58172 6.58172 3 11 3C15.4183 3 19 6.58172 19 11Z"
+                        stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg></button>
+        </form>
+        <div id="searchResults" class=""></div>
+        <script>
+            let mainForm = document.getElementById("formSearch");
+            let searchQuery = document.getElementById("searchQuery");
+            console.log(searchQuery)
+            mainForm.addEventListener("click", (e) => {
+                e.preventDefault();
+                let sQ = searchQuery.value;
+                if (sQ) {
+                    //make request to /search with the query and render the results in a 
+                    fetch(`/search?q=${sQ}`)
+                        .then((response) => {
+                            if (response.ok) {
+                                return response.text()
+                            } else {
+                                console.error("Non-json returned")
+                            }
+                        }).then((searchResults) => {
+                            //the server returns html of rendered results
+                            // render the results in the #searchResults div
+                            
+                        }
+                        )
+                }
+            })
+        </script>
+    </body>
+</body>
+
+</html>
