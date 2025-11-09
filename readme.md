@@ -1,12 +1,13 @@
 
 # Talash Search
-
+![.](https://github.com/BurhanArif4211/TalashSearch/blob/main/imgs/1.png)
 **Talash is a search algorithm that uses techniques such as reverse index lookup to search large amounts of texts in milliseconds speed**
 *Currently presented as a prototype **web search engine**, I am planning to generalize this algorithm to work on any Urdu dataset for fast lookups*
 ## How Does it Work?
  Given a large dataset, we build a [reverse index](https://en.wikipedia.org/wiki/Reverse_index) and store all the terms along with their respective occurrences in each document.
  This reverse index allows us to lookup data significantly fast.
- ![entire workflow]()
+ 
+![entire workflow](https://github.com/BurhanArif4211/TalashSearch/blob/main/imgs/2.png)
 
 ## Tools Used:
 [Makhzan](https://github.com/zeerakahmed/makhzan/) Used as a text corpus for algorithm development. 
